@@ -4,12 +4,28 @@ This GitHub is the implementation of the project Deep Video Inpainting: A Spatio
 ## Requirements 
 
 ### LDM
-
+Run the following commands to create the ldm enviroment. This is the same requirement as the Latent Diffusion paper.
+```
+cd LDM 
+conda env create -f environment.yaml
+conda activate ldm
+pip install transformers==4.19.2 scann kornia==0.6.4 torchmetrics==0.6.0
+pip install git+https://github.com/arogozhnikov/einops.git
+pip install matplotlib
+```
 ### FuseFormer
 
+Run the following commands in a different enviroment, not in ldm. 
+```
+cd FuseFormer
+pip install -r requirements.txt
+```
 
 ### ZITS
 
+```
+
+```
 
 ### STTN
 
