@@ -1,3 +1,3 @@
-# final_project-manrique_robayo
-final_project-manrique_robayo created by GitHub Classroom
+# Deep Video Inpainting: A Spatio-temporal Approach for Video Processing
+
 Ensayo siu 
