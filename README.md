@@ -42,7 +42,7 @@ conda env create -f environment.yml
 ```
 
 ## Test
-To reproduce the results of the models you must first copy the following folders. The first one contains all the pre-trained models used in the test.py file. The other folder contains the data with which the results will be reproduced. These folders must be located at the same height as the test.py file.
+To reproduce the results of the models you must first copy the following folders. The first one contains all the pre-trained models used in the test.py file. The other folder contains the data with which the results will be reproduced. These folders must be located at the same location as the test.py file and not inside other folder, just inside the folder of the repository.
 
 ```
 /media/disk0/dlmanrique/Principios/Proyecto/modelos
