@@ -15,7 +15,7 @@ pip install matplotlib
 ```
 ### FuseFormer
 
-Run the following commands in a different enviroment, not in ldm. 
+Run the following commands in a different enviroment, not in ldm. Note that in this environment you must have Python >= 3.6 and Pytorch >= 1.0 and corresponding torchvision.
 ```
 cd FuseFormer
 pip install -r requirements.txt
@@ -23,12 +23,23 @@ pip install -r requirements.txt
 
 ### ZITS
 
+In the same environment that was created for FuseFormer, run the following commands.
 ```
-
+pip install torch==1.9.0+cu111 torchvision==0.10.0+cu111 torchaudio==0.9.0 -f https://download.pytorch.org/whl/torch_stable.html
+cd ZITS_inpainting
+pip install -r requirement.txt
+git clone https://github.com/NVIDIA/apex
+cd apex
+pip install -v --disable-pip-version-check --no-cache-dir --global-option="--cpp_ext" ./
 ```
 
 ### STTN
+Run the following commands to create an enviroment called STTN.
 
+```
+cd STTN/
+conda env create -f environment.yml 
+```
 
 ## Test
 To reproduce the results of the models you must first copy the following folders. The first one contains all the pre-trained models used in the test.py file. The other folder contains the data with which the results will be reproduced. These folders must be located at the same height as the test.py file.
@@ -41,29 +52,31 @@ Now, after having copied these folders the commands to run each one of the model
 
 ### LDM
 
-The commands to recreate the results with this model are as follows. Be careful, each one can take about 5 hours.
+The commands to recreate the results with this model are as follows. Be careful, each one can take about 5 hours. Run this commands in the ldm enviroment.
 ```
+conda activate ldm
 python test.py --model modelos/LDM --mask_type Static --GPU_ids X
 python test.py --model modelos/LDM --mask_type Dynamic --GPU_ids X
 ```
 
 ### FuseFormer
 
-The commands to recreate the results with this model are as follows. 
+The commands to recreate the results with this model are as follows. Run these commands in the environment in which you ran the requirements for FuseFormer.
 ```
 python test.py --model modelos/FF --mask_type Static --GPU_ids X
 python test.py --model modelos/FF --mask_type Dynamic --GPU_ids X
 ```
 
 ### ZITS
-The commands to recreate the results with this model are as follows. 
+The commands to recreate the results with this model are as follows. These commands can be run in the same environment used for FuseFormer, as long as you have run the ZITS requirements there. 
 ```
 python test.py --model modelos/ZITS --mask_type Static --GPU_ids X
 python test.py --model modelos/ZITS --mask_type Dynamic --GPU_ids X
 ```
 ### STTN
-The commands to recreate the results with this model are as follows. 
+The commands to recreate the results with this model are as follows.  
 ```
+conda activate sttn
 python test.py --model modelos/STTN --mask_type Static --GPU_ids X
 python test.py --model modelos/STTN --mask_type Dynamic --GPU_ids X
 ```
