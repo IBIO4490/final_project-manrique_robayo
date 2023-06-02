@@ -1,7 +1,7 @@
 # Deep Video Inpainting: A Spatio-temporal Approach for Video Processing
-Este GitHub es la implementacion del proyecto Deep Video Inpainting: A Spatio-temporal Approach for Video Processing. En este se dan los comandos para reproducir todos los resultados del paper y se incluye un demo con el mejor modelo. Los requerimientos para cada modelo se detallan a continuacion.
+This GitHub is the implementation of the project Deep Video Inpainting: A Spatio-temporal Approach for Video Processing. It gives the commands to reproduce all the results of the paper and includes a demo with the best model. The requirements for each model are detailed below.
 
-## Requerimientos 
+## Requirements 
 
 ### LDM
 
@@ -15,17 +15,17 @@ Este GitHub es la implementacion del proyecto Deep Video Inpainting: A Spatio-te
 
 
 ## Test
-Para reproducir los resultados de los modelos primero se deben copiar las siguientes carpetas. En la primera se encuentran todos los modelos pre entrenados que se usan en el archivo de test.py. En la otra se encuentran los datos con los cuales se van a reproducir los resultados. Estas carpetas deben estar ubicadas a la misma altura que el archivo de test.py
+To reproduce the results of the models you must first copy the following folders. The first one contains all the pre-trained models used in the test.py file. The other folder contains the data with which the results will be reproduced. These folders must be located at the same height as the test.py file.
 
 ```
 /media/disk0/dlmanrique/Principios/Proyecto/modelos
 /media/disk0/dlmanrique/Principios/Proyecto/data
 ```
-Ahora, despues de haber copiado estas carpetas se detallan los comandos para correr cada uno de los modelos. En el apartado de --GPU_ids se debe poner un numero (0,1,2, o 3).
+Now, after having copied these folders the commands to run each one of the models are detailed. In the --GPU_ids section you must put a number (0,1,2, or 3). Example: --GPU_ids 1 is a correct command.
 
 ### LDM
 
-Los comandos para recrear los resultados con este modelo son los siguientes. Tenga cuidado, cada uno se puede demorar unas 5 horas.
+The commands to recreate the results with this model are as follows. Be careful, each one can take about 5 hours.
 ```
 python test.py --model modelos/LDM --mask_type Static --GPU_ids X
 python test.py --model modelos/LDM --mask_type Dynamic --GPU_ids X
@@ -33,27 +33,27 @@ python test.py --model modelos/LDM --mask_type Dynamic --GPU_ids X
 
 ### FuseFormer
 
-Los comandos para recrear los resultados con este modelo son los siguientes. 
+The commands to recreate the results with this model are as follows. 
 ```
 python test.py --model modelos/FF --mask_type Static --GPU_ids X
-python test.py --model modelos/FF --mask_type Dynamic --GPU_ids 1
+python test.py --model modelos/FF --mask_type Dynamic --GPU_ids X
 ```
 
 ### ZITS
-Los comandos para recrear los resultados con este modelo son los siguientes.
+The commands to recreate the results with this model are as follows. 
 ```
 python test.py --model modelos/ZITS --mask_type Static --GPU_ids X
 python test.py --model modelos/ZITS --mask_type Dynamic --GPU_ids X
 ```
 ### STTN
-Los comandos para recrear los resultados con este modelo son los siguientes.
+The commands to recreate the results with this model are as follows. 
 ```
 python test.py --model modelos/STTN --mask_type Static --GPU_ids X
 python test.py --model modelos/STTN --mask_type Dynamic --GPU_ids X
 ```
 
 ## Demo
-Suponiendo que ya se cuenta con las carpetas que tocaba copiar en el test, los comandos para correr el demo con ambos tipos de mascaras son:
+Assuming that you already have the folders to copy in the test, the commands to run the demo with both types of masks are:
 ```
 python demo.py --mask_type Static --GPU_ids X
 python demo.py --mask_type Dynamic --GPU_ids X
