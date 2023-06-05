@@ -17,10 +17,19 @@ pip install matplotlib
 
 Run the following commands in a different enviroment, not in ldm. Note that in this environment you must have Python >= 3.6 and Pytorch >= 1.0 and corresponding torchvision.
 ```
+conda create --name FF
+conda activate FF
+conda install python
+pip install numpy
+conda install pytorch torchvision torchaudio pytorch-cuda=11.7 -c pytorch -c nvidia
 cd FuseFormer
 pip install -r requirements.txt
 ```
+If there is a problem with scikit-image installation, run this command:
 
+```
+pip install scikit-image
+```
 ### ZITS
 
 In the same environment that was created for FuseFormer, run the following commands.
