@@ -34,6 +34,7 @@ pip install scikit-image
 
 In the same environment that was created for FuseFormer, run the following commands.
 ```
+conda activate FF
 pip install torch==1.9.0+cu111 torchvision==0.10.0+cu111 torchaudio==0.9.0 -f https://download.pytorch.org/whl/torch_stable.html
 cd ZITS_inpainting
 pip install -r requirement.txt
@@ -57,7 +58,7 @@ To reproduce the results of the models you must first copy the following folders
 /media/disk0/dlmanrique/Principios/Proyecto/modelos
 /media/disk0/dlmanrique/Principios/Proyecto/data
 ```
-Now, after having copied these folders the commands to run each one of the models are detailed. In the --GPU_ids section you must put a number (0,1,2, or 3). Example: --GPU_ids 1 is a correct command.
+Now, after having copied these folders the commands to run each one of the models are detailed. In the --GPU_ids section you must put a number (0,1,2, or 3). Example: --GPU_ids 1 is a correct command. Run the following commands just inside the folder of the repository, not inside any other folder.
 
 ### LDM
 
@@ -72,6 +73,7 @@ python test.py --model modelos/LDM --mask_type Dynamic --GPU_ids X
 
 The commands to recreate the results with this model are as follows. Run these commands in the environment in which you ran the requirements for FuseFormer.
 ```
+conda activate FF
 python test.py --model modelos/FF --mask_type Static --GPU_ids X
 python test.py --model modelos/FF --mask_type Dynamic --GPU_ids X
 ```
@@ -79,6 +81,7 @@ python test.py --model modelos/FF --mask_type Dynamic --GPU_ids X
 ### ZITS
 The commands to recreate the results with this model are as follows. These commands can be run in the same environment used for FuseFormer, as long as you have run the ZITS requirements there. 
 ```
+conda activate FF
 python test.py --model modelos/ZITS --mask_type Static --GPU_ids X
 python test.py --model modelos/ZITS --mask_type Dynamic --GPU_ids X
 ```
