@@ -91,7 +91,7 @@ python test.py --model modelos/FF --mask_type Dynamic --GPU_ids X
 ### ZITS
 The commands to recreate the results with this model are as follows. These commands can be run in the same environment used for FuseFormer, as long as you have run the ZITS requirements there. 
 ```
-conda activate FF
+conda activate ZITS
 python test.py --model modelos/ZITS --mask_type Static --GPU_ids X
 python test.py --model modelos/ZITS --mask_type Dynamic --GPU_ids X
 ```
