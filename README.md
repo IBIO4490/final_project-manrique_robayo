@@ -34,8 +34,11 @@ pip install scikit-image
 
 In the same environment that was created for FuseFormer, run the following commands.
 ```
-conda activate FF
-pip install torch==1.9.0+cu111 torchvision==0.10.0+cu111 torchaudio==0.9.0 -f https://download.pytorch.org/whl/torch_stable.html
+conda create --name ZITS
+conda activate ZITS
+conda install python
+pip install numpy
+conda install pytorch torchvision torchaudio pytorch-cuda=11.7 -c pytorch -c nvidia
 cd ZITS_inpainting
 pip install -r requirement.txt
 git clone https://github.com/NVIDIA/apex
@@ -47,8 +50,15 @@ pip install -v --disable-pip-version-check --no-cache-dir --global-option="--cpp
 Run the following commands to create an enviroment called STTN.
 
 ```
-cd STTN/
-conda env create -f environment.yml 
+conda create --name STTN
+conda activate STTN
+conda install python
+pip install numpy
+conda install pytorch torchvision torchaudio pytorch-cuda=11.7 -c pytorch -c nvidia
+conda install -c anaconda scikit-image
+pip install opencv-python
+pip install tqdm
+pip install matplotlib
 ```
 
 ## Test
@@ -88,7 +98,7 @@ python test.py --model modelos/ZITS --mask_type Dynamic --GPU_ids X
 ### STTN
 The commands to recreate the results with this model are as follows.  
 ```
-conda activate sttn
+conda activate STTN
 python test.py --model modelos/STTN --mask_type Static --GPU_ids X
 python test.py --model modelos/STTN --mask_type Dynamic --GPU_ids X
 ```
@@ -96,6 +106,7 @@ python test.py --model modelos/STTN --mask_type Dynamic --GPU_ids X
 ## Demo
 Assuming that you already have the folders to copy in the test, the commands to run the demo with both types of masks are:
 ```
+conda activate FF
 python demo.py --mask_type Static --GPU_ids X
 python demo.py --mask_type Dynamic --GPU_ids X
 ```
