@@ -34,16 +34,11 @@ pip install scikit-image
 
 In the same environment that was created for FuseFormer, run the following commands.
 ```
-conda create --name ZITS
+conda create -n ZITS python=3.6
 conda activate ZITS
-conda install python
-pip install numpy
-conda install pytorch torchvision torchaudio pytorch-cuda=11.7 -c pytorch -c nvidia
-cd ZITS_inpainting
+pip install torch==1.9.0+cu111 torchvision==0.10.0+cu111 torchaudio==0.9.0 -f https://download.pytorch.org/whl/torch_stable.html
 pip install -r requirement.txt
-git clone https://github.com/NVIDIA/apex
-cd apex
-pip install -v --disable-pip-version-check --no-cache-dir --global-option="--cpp_ext" ./
+
 ```
 
 ### STTN
