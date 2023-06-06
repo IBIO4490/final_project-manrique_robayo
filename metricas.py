@@ -111,7 +111,7 @@ def init_i3d_model():
     except:
         pass
     print("[Loading I3D model for FID score ..]")
-    i3d_model_weight = './i3model/i3d_rgb_imagenet.pt'
+    i3d_model_weight = './modelos/i3d_rgb_imagenet.pt'
     #if not os.path.exists(i3d_model_weight):
     #    os.mkdir(os.path.dirname(i3d_model_weight))
     #    urllib.request.urlretrieve('http://www.cmlab.csie.ntu.edu.tw/~zhe2325138/i3d_rgb_imagenet.pt', i3d_model_weight)
